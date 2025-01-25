@@ -17,3 +17,10 @@ region_rect = Rect2(0, 0, 256, 256)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(12, 60)
 shape = SubResource("RectangleShape2D_8fp34")
+
+[node name="DustTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="DustTimer" to="." method="_on_dust_timer_timeout"]

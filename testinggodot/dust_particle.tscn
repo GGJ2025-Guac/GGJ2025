@@ -18,8 +18,7 @@ shape = SubResource("CircleShape2D_4mw8g")
 
 [node name="DustTimer" type="Timer" parent="."]
 process_callback = 0
-wait_time = 2.0
-one_shot = true
+wait_time = 3.0
 autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
