@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var Bubble: PackedScene
 
+@onready var gun_tip: Marker2D = $GunTip
+
 var speed: float = 500.0
 
 # Called when the node enters the scene tree for the first time.
@@ -48,7 +50,7 @@ func create_bubble():
 		if direction == Vector2.ZERO:
 			direction = Vector2.RIGHT
 		
-		bubble_inst.global_position = global_position + direction * 120
+		bubble_inst.global_position = gun_tip.global_position
 		
 		if bubble_inst.has_method("set_velocity"):
 			bubble_inst.set_velocity(direction * 200)

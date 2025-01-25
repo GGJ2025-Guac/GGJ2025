@@ -19,3 +19,6 @@ region_rect = Rect2(0, 0, 240, 240)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_8fp34")
+
+[node name="GunTip" type="Marker2D" parent="."]
+position = Vector2(128, 16)
