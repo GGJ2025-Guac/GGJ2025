@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://bubble_manager.gd" id="3_um4ml"]
 [ext_resource type="PackedScene" uid="uid://blonqhojr2oii" path="res://dust_bunny.tscn" id="5_gu1uk"]
 [ext_resource type="Texture2D" uid="uid://d0g6vmgcf75og" path="res://assets/couch_texture.png" id="5_vxnnj"]
-[ext_resource type="PackedScene" uid="uid://cps2o4c8g18b4" path="res://dust_particle.tscn" id="7_62m5t"]
+[ext_resource type="Script" path="res://dust_manager.gd" id="7_5wrho"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_fgo1o")
@@ -45,5 +45,4 @@ position = Vector2(1056, 832)
 script = ExtResource("3_um4ml")
 
 [node name="DustManager" type="Node2D" parent="."]
-
-[node name="DustParticle" parent="." instance=ExtResource("7_62m5t")]
+script = ExtResource("7_5wrho")

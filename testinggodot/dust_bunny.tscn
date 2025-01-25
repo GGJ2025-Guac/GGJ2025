@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://blonqhojr2oii"]
+[gd_scene load_steps=5 format=3 uid="uid://blonqhojr2oii"]
 
 [ext_resource type="Script" path="res://dust_bunny.gd" id="1_ihvss"]
 [ext_resource type="Texture2D" uid="uid://dwvgldh3qae0g" path="res://assets/dust_bunny.png" id="2_5p0fh"]
+[ext_resource type="PackedScene" uid="uid://cps2o4c8g18b4" path="res://dust_particle.tscn" id="2_qm6wg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fp34"]
 size = Vector2(120, 120)
 
 [node name="DustBunny" type="CharacterBody2D"]
 script = ExtResource("1_ihvss")
+DustParticle = ExtResource("2_qm6wg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_5p0fh")
