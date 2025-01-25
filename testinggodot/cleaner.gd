@@ -10,6 +10,8 @@ signal cleaner_shot_bubble(bubble_inst, position, direction)
 
 var speed: float = 500.0
 
+var health: int = 100
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
