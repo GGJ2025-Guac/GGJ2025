@@ -8,6 +8,8 @@ var health: int = 100
 
 var dust_angle: float = 0.0
 
+var strength: float = 10.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -17,6 +19,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func _physics_process(delta: float) -> void:
+	var collision = move_and_collide(Vector2.ZERO, true)
+	if collision:
+		var collider = collision.get_collider()
+		if collider.has_method("take_damage"):
+			print("DustBunny collision")
+			collider.take_damage(strength)
+			
 func bubble_process():
 	health -= 34
 	if health <= 0:

@@ -4,6 +4,8 @@ class_name DustParticle
 
 var velocity: Vector2 = Vector2.ZERO
 
+var strength: float = 1.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -21,6 +23,9 @@ func bubble_process():
 func _on_body_entered(body: Node2D):
 	# don't disappear if touching a DustBunny
 	if not body.has_method("create_dust"):
+		if body.has_method("take_damage"):
+			print("DustParticle collision")
+			body.take_damage(strength)
 		queue_free()
 
 func set_velocity(new_velocity: Vector2):

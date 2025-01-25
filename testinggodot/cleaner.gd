@@ -10,7 +10,7 @@ signal cleaner_shot_bubble(bubble_inst, position, direction)
 
 var speed: float = 500.0
 
-var health: int = 100
+var health: float = 100.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -58,3 +58,7 @@ func create_bubble():
 		emit_signal("cleaner_shot_bubble", bubble_inst, gun_tip.global_position, direction)
 	else:
 		print("Bubble scene not assigned")
+		
+func take_damage(amount: float):
+	health -= amount
+	print("Cleaner take_damage health: ", health)
