@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
+class_name Cleaner
+
 @export var Bubble: PackedScene
 
 @onready var gun_tip: Marker2D = $GunTip
 
-signal cleaner_shot_bubble(bubble)
+signal cleaner_shot_bubble(bubble_inst, position, direction)
 
 var speed: float = 500.0
 
@@ -51,13 +53,6 @@ func create_bubble():
 		if direction == Vector2.ZERO:
 			direction = Vector2.RIGHT
 		
-		bubble_inst.global_position = gun_tip.global_position
-		
-		if bubble_inst.has_method("set_velocity"):
-			bubble_inst.set_velocity(direction * 200)
-		else:
-			print("Bubble does not have set_velocity")
-		
-		emit_signal("cleaner_shot_bubble", bubble_inst)
+		emit_signal("cleaner_shot_bubble", bubble_inst, gun_tip.global_position, direction)
 	else:
 		print("Bubble scene not assigned")
