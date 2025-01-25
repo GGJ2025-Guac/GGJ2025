@@ -28,5 +28,6 @@ func _process(delta: float) -> void:
 	if direction != Vector2.ZERO:
 		velocity = direction * speed
 		move_and_slide()
+		look_at(global_position + direction)
 
 	
