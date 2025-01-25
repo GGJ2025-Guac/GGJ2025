@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://blonqhojr2oii"]
+
+[ext_resource type="Script" path="res://dust_bunny.gd" id="1_ihvss"]
+[ext_resource type="Texture2D" uid="uid://dwvgldh3qae0g" path="res://assets/dust_bunny.png" id="2_5p0fh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fp34"]
+size = Vector2(120, 120)
+
+[node name="DustBunny" type="CharacterBody2D"]
+script = ExtResource("1_ihvss")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5p0fh")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, 60)
+shape = SubResource("RectangleShape2D_8fp34")

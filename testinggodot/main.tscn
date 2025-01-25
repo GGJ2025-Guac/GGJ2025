@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://mi60uret4p4u"]
+[gd_scene load_steps=7 format=3 uid="uid://mi60uret4p4u"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_fgo1o"]
 [ext_resource type="PackedScene" uid="uid://brb58e3yijke7" path="res://cleaner.tscn" id="1_hgogt"]
 [ext_resource type="PackedScene" uid="uid://d3ngmch2yi4k8" path="res://dirt.tscn" id="3_pk4hb"]
 [ext_resource type="Script" path="res://bubble_manager.gd" id="3_um4ml"]
+[ext_resource type="PackedScene" uid="uid://blonqhojr2oii" path="res://dust_bunny.tscn" id="5_gu1uk"]
 [ext_resource type="Texture2D" uid="uid://d0g6vmgcf75og" path="res://assets/couch_texture.png" id="5_vxnnj"]
 
 [node name="Main" type="Node2D"]
@@ -26,6 +27,9 @@ zoom = Vector2(0.465, 0.465)
 
 [node name="Dirt" parent="." instance=ExtResource("3_pk4hb")]
 position = Vector2(-616, -264)
+
+[node name="DustBunny" parent="." instance=ExtResource("5_gu1uk")]
+position = Vector2(368, -584)
 
 [node name="Dirt2" parent="." instance=ExtResource("3_pk4hb")]
 position = Vector2(1152, -272)

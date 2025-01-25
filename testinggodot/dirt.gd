@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Dirt
+
 @onready var player = get_parent().get_node("Cleaner")
 @export var speed : float = 500
 
