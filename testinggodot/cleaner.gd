@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 @onready var gun_tip: Marker2D = $GunTip
 
+signal cleaner_shot_bubble(bubble)
+
 var speed: float = 500.0
 
 # Called when the node enters the scene tree for the first time.
@@ -44,7 +46,6 @@ func shoot():
 func create_bubble():
 	if Bubble:
 		var bubble_inst = Bubble.instantiate()
-		get_parent().add_child(bubble_inst)
 		
 		var direction = velocity.normalized()
 		if direction == Vector2.ZERO:
@@ -56,5 +57,7 @@ func create_bubble():
 			bubble_inst.set_velocity(direction * 200)
 		else:
 			print("Bubble does not have set_velocity")
+		
+		emit_signal("cleaner_shot_bubble", bubble_inst)
 	else:
 		print("Bubble scene not assigned")
