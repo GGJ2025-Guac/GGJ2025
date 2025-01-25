@@ -8,26 +8,25 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventKey and event.is_pressed():
-		var direction: Vector2 = Vector2.ZERO
+func _process(delta: float) -> void:	
+	var direction: Vector2 = Vector2.ZERO
+	
+	if Input.is_action_pressed("up"):
+		direction.y -= 1
 		
-		var e2: InputEventKey = event
-		if e2.keycode == KEY_UP:
-			direction.y -= 1
-		elif e2.keycode == KEY_DOWN:
-			direction.y += 1
-		elif e2.keycode == KEY_LEFT:
-			direction.x -= 1
-		elif e2.keycode == KEY_RIGHT:
-			direction.x += 1
-			
-		direction = direction.normalized()
+	if Input.is_action_pressed("down"):
+		direction.y += 1
 		
-		if direction != Vector2.ZERO:
-			velocity = direction * speed
-			move_and_slide()
+	if Input.is_action_pressed("left"):
+		direction.x -= 1
+		
+	if Input.is_action_pressed("right"):
+		direction.x += 1
+		
+	direction = direction.normalized()
+	
+	if direction != Vector2.ZERO:
+		velocity = direction * speed
+		move_and_slide()
+
+	
