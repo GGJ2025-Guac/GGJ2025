@@ -54,7 +54,7 @@ func create_bubble():
 		var direction = velocity.normalized()
 		if direction == Vector2.ZERO:
 			direction = Vector2.RIGHT
-		
+
 		emit_signal("cleaner_shot_bubble", bubble_inst, gun_tip.global_position, direction)
 	else:
 		print("Bubble scene not assigned")

@@ -21,8 +21,6 @@ func set_velocity(new_velocity: Vector2):
 
 func _on_pop_timer_timeout() -> void:
 	queue_free()
-	print("bubble popped")
-
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("bubble_process"):
