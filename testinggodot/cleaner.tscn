@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://brb58e3yijke7"]
+
+[ext_resource type="Script" path="res://cleaner.gd" id="1_3cy4k"]
+[ext_resource type="PackedScene" uid="uid://pochpevx00k4" path="res://bubble.tscn" id="2_8fhri"]
+[ext_resource type="Texture2D" uid="uid://bhjxdvastbul8" path="res://assets/cleaner.png" id="2_qd7wt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fp34"]
+size = Vector2(144, 136)
+
+[node name="Cleaner" type="CharacterBody2D"]
+script = ExtResource("1_3cy4k")
+Bubble = ExtResource("2_8fhri")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qd7wt")
+region_enabled = true
+region_rect = Rect2(0, 0, 240, 240)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_8fp34")
