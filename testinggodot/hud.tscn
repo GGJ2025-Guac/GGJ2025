@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dr2427i2q5q6"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 361.0
+offset_bottom = 72.0
+
+[node name="PanelContainer" type="PanelContainer" parent="HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HFlowContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="HFlowContainer/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(329, 0)
+layout_mode = 2
+value = 100.0

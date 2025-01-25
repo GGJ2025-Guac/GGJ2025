@@ -25,3 +25,7 @@ func _on_body_entered(body: Node2D):
 
 func set_velocity(new_velocity: Vector2):
 	velocity = new_velocity
+
+
+func _on_dust_timer_timeout() -> void:
+	queue_free()
