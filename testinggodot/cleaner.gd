@@ -13,26 +13,16 @@ signal cleaner_shot_bubble(bubble_inst, position, direction)
 signal cleaner_health_change(health)
 
 var speed: float = 500.0
-var health: float = 100.0
-var is_dead: bool = false
-var rapid_fire: bool = false
-var bubble_path = preload("res://bubble.tscn")
 
-var timer = null
-var bullet_delay = 0.5
-var can_shoot = true
+var health: float = 100.0
+
+var is_dead: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	timer = Timer.new()
-	add_child(timer)
-	timer.set_one_shot(true)
-	timer.set_wait_time(bullet_delay)
-	timer.connect("timeout", Callable(self, "_on_timeout_complete"))
+	pass # Replace with function body.
 
-func _on_timeout_complete():
-	can_shoot = true
-	
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float):	
 	var direction: Vector2 = Vector2.ZERO
@@ -66,18 +56,24 @@ func _unhandled_input(event: InputEvent) -> void:
 		shoot()
 	
 func _input(event: InputEvent) -> void:
-	if Input.is_action_pressed("bubble") && can_shoot:
+	if Input.is_action_pressed("bubble"):
 		shoot()
-		
+
 func shoot():
-	var bubble = bubble_path.instantiate()
-	bubble.direction = rotation
-	bubble.pos = global_position
-	bubble.rot = global_rotation
-	get_parent().add_child(bubble)
-	can_shoot = false
-	timer.start()
-	
+	create_bubble()
+
+func create_bubble():
+	if Bubble:
+		var bubble_inst = Bubble.instantiate()
+		
+		var direction = velocity.normalized()
+		if direction == Vector2.ZERO:
+			direction = Vector2.RIGHT
+
+		emit_signal("cleaner_shot_bubble", bubble_inst, gun_tip.global_position, direction)
+	else:
+		print("Bubble scene not assigned")
+		
 func take_damage(amount: float):
 	health = max(health - amount, 0.0)
 	emit_signal("cleaner_health_change", health)
