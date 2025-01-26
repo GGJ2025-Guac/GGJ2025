@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3ngmch2yi4k8"]
 
 [ext_resource type="Script" path="res://dirt.gd" id="1_72l75"]
-[ext_resource type="Texture2D" uid="uid://bcra0ev7pqipu" path="res://assets/dirt.png" id="2_7eem0"]
+[ext_resource type="SpriteFrames" uid="uid://dqikl5x4p16i" path="res://dirt_sprite_frames.tres" id="2_n1gac"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fp34"]
 size = Vector2(144, 136)
@@ -9,10 +9,8 @@ size = Vector2(144, 136)
 [node name="Dirt" type="CharacterBody2D"]
 script = ExtResource("1_72l75")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_7eem0")
-region_enabled = true
-region_rect = Rect2(0, 0, 240, 240)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8fp34")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_n1gac")

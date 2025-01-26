@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dqikl5x4p16i"]
+
+[ext_resource type="Texture2D" uid="uid://8vlpo8olq4h2" path="res://assets/dirt_sprite.png" id="1_jd4bi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6els"]
+atlas = ExtResource("1_jd4bi")
+region = Rect2(0, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bedn"]
+atlas = ExtResource("1_jd4bi")
+region = Rect2(240, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuoh3"]
+atlas = ExtResource("1_jd4bi")
+region = Rect2(480, 0, 240, 240)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6els")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bedn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuoh3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

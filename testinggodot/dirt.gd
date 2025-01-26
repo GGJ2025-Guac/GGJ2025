@@ -4,6 +4,8 @@ class_name Dirt
 
 @onready var player = get_parent().get_node("Cleaner")
 
+@onready var animation: AnimatedSprite2D = $AnimatedSprite2D
+
 @export var speed : float = 100
 
 var strength: float = 0.1
@@ -25,8 +27,7 @@ func _physics_process(delta : float):
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	animation.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
