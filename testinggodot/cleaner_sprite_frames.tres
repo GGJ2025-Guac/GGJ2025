@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://v4wuwniu7jpu"]
+
+[ext_resource type="Texture2D" uid="uid://bje620d4lq0vh" path="res://assets/cleaner_sprite.png" id="1_asa0k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nei7w"]
+atlas = ExtResource("1_asa0k")
+region = Rect2(0, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_te70m"]
+atlas = ExtResource("1_asa0k")
+region = Rect2(480, 0, 240, 240)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nei7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_te70m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]

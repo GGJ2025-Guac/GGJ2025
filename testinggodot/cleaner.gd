@@ -6,6 +6,8 @@ class_name Cleaner
 
 @onready var gun_tip: Marker2D = $GunTip
 
+@onready var animation: AnimatedSprite2D = $AnimatedSprite2D
+
 signal cleaner_shot_bubble(bubble_inst, position, direction)
 
 signal cleaner_health_change(health)
@@ -43,6 +45,11 @@ func _process(delta: float):
 		velocity = direction * speed
 		move_and_slide()
 		look_at(global_position + direction)
+		if not animation.is_playing():
+			animation.play()
+	else:
+		if animation.is_playing():
+			animation.stop()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("bubble"):
