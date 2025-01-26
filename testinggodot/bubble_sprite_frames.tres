@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://ciaryy38y4ib0"]
+
+[ext_resource type="Texture2D" uid="uid://billgnwvuf44u" path="res://assets/bubble_sprite.png" id="1_7mh7p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ktot"]
+atlas = ExtResource("1_7mh7p")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo2l4"]
+atlas = ExtResource("1_7mh7p")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxpbj"]
+atlas = ExtResource("1_7mh7p")
+region = Rect2(256, 0, 128, 128)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ktot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eo2l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxpbj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
