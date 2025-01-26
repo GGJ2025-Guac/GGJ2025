@@ -75,12 +75,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 935.0
 offset_top = 532.0
-offset_right = -935.0
+offset_right = -901.0
 offset_bottom = -517.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
-text = "Retry"
+text = "Retry (A)"
 
 [node name="Quit" type="Button" parent="."]
 anchors_preset = 15
@@ -88,12 +88,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 935.0
 offset_top = 661.0
-offset_right = -935.0
+offset_right = -901.0
 offset_bottom = -388.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
-text = "Quit"
+text = "Quit (B)"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_8r5dh")
