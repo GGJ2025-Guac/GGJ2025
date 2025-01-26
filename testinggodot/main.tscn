@@ -32,6 +32,12 @@ zoom = Vector2(0.465, 0.465)
 [node name="DustBunny" parent="." instance=ExtResource("5_gu1uk")]
 position = Vector2(368, -584)
 
+[node name="DustBunny2" parent="." instance=ExtResource("5_gu1uk")]
+position = Vector2(-1152, -808)
+
+[node name="DustBunny3" parent="." instance=ExtResource("5_gu1uk")]
+position = Vector2(656, 1496)
+
 [node name="Dirt" parent="." instance=ExtResource("3_pk4hb")]
 position = Vector2(-616, -264)
 
@@ -43,6 +49,12 @@ position = Vector2(-808, 720)
 
 [node name="Dirt4" parent="." instance=ExtResource("3_pk4hb")]
 position = Vector2(1056, 832)
+
+[node name="Dirt5" parent="." instance=ExtResource("3_pk4hb")]
+position = Vector2(-576, 1568)
+
+[node name="Dirt6" parent="." instance=ExtResource("3_pk4hb")]
+position = Vector2(1616, -808)
 
 [node name="BubbleManager" type="Node2D" parent="."]
 script = ExtResource("3_um4ml")

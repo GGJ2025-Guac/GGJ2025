@@ -9,18 +9,13 @@ extends Node2D
 
 # based on number of dirt (25) + dust bunnies (50)
 # hard-coded for now
-var clean_total: float = 150.0
+var clean_total: float = 150.0 + 150.0
 var clean_current: float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	cleaner.connect("cleaner_shot_bubble", Callable(bubble_manager, "handle_bubble_spawned"))
 	cleaner.connect("cleaner_health_change", Callable(hud, "handle_health_change"))
-	
-	
-	
-	clean_total = 150.0
-	clean_current = 0.0
 	
 	if audio_player and not audio_player.playing:
 		audio_player.play()
