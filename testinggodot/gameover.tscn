@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://ibnye4o1xk7l"]
+[gd_scene load_steps=6 format=3 uid="uid://ibnye4o1xk7l"]
 
 [ext_resource type="Script" path="res://gameover.gd" id="1_uqpiw"]
 [ext_resource type="Texture2D" uid="uid://d0g6vmgcf75og" path="res://assets/couch_texture.png" id="2_78ea0"]
+[ext_resource type="Texture2D" uid="uid://bcra0ev7pqipu" path="res://assets/dirt.png" id="3_0wrkj"]
+[ext_resource type="Texture2D" uid="uid://cxeuap3wryg5x" path="res://assets/bubble.png" id="4_8h6bt"]
+[ext_resource type="AudioStream" uid="uid://dvqtt2pfkwioc" path="res://assets/bubble_menu_theme_draft.mp3" id="5_8r5dh"]
 
 [node name="gameover" type="CanvasLayer"]
 script = ExtResource("1_uqpiw")
@@ -14,6 +17,44 @@ offset_right = 3072.0
 offset_bottom = 2048.0
 texture = ExtResource("2_78ea0")
 stretch_mode = 1
+
+[node name="DirtRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = -1580.0
+offset_bottom = -740.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_0wrkj")
+
+[node name="BubbleRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1024.0
+offset_top = 908.0
+offset_right = -832.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("4_8h6bt")
+
+[node name="BubbleRect2" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1176.0
+offset_top = 800.0
+offset_right = -680.0
+offset_bottom = -216.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("4_8h6bt")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 15
@@ -53,6 +94,11 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
 text = "Quit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_8r5dh")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
