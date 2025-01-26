@@ -77,6 +77,7 @@ func shoot():
 	get_parent().add_child(bubble)
 	can_shoot = false
 	timer.start()
+	print("Delay value", bullet_delay)
 	
 func take_damage(amount: float):
 	health = max(health - amount, 0.0)
@@ -89,3 +90,8 @@ func take_damage(amount: float):
 func die():
 	is_dead = true
 	get_tree().change_scene_to_file("res://gameover.tscn")
+	
+func enable_rapid_fire():
+	rapid_fire = true
+	bullet_delay = 0.05
+	print("Rapid fire enabled")
