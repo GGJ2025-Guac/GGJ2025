@@ -14,6 +14,8 @@ var speed: float = 500.0
 
 var health: float = 100.0
 
+var is_dead: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -36,11 +38,12 @@ func _process(delta: float):
 		direction.x += 1
 		
 	direction = direction.normalized()
+	look_at(get_global_mouse_position())
 	
 	if direction != Vector2.ZERO:
 		velocity = direction * speed
 		move_and_slide()
-		look_at(global_position + direction)
+		
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("bubble"):
@@ -65,3 +68,10 @@ func take_damage(amount: float):
 	health = max(health - amount, 0.0)
 	emit_signal("cleaner_health_change", health)
 	print("Cleaner take_damage health: ", health)
+	
+	if health == 0:
+		die()
+
+func die():
+	is_dead = true
+	get_tree().change_scene_to_file("res://gameover.tscn")
