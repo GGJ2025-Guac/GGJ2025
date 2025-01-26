@@ -5,7 +5,7 @@ extends Node2D
 
 @onready var hud: HUD = $HUD
 
-@onready var audio_player: AudioStreamPlayer2D = $MainBGPlayer
+@onready var audio_player: AudioStreamPlayer = $MainBGPlayer
 
 # based on number of dirt (25) + dust bunnies (50)
 # hard-coded for now

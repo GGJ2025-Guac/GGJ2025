@@ -63,10 +63,6 @@ func _process(delta: float):
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("bubble"):
 		shoot()
-	
-func _input(event: InputEvent) -> void:
-	if Input.is_action_pressed("bubble"):
-		shoot()
 
 func shoot():
 	create_bubble()
