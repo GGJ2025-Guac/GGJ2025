@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4qwf5vn3jdyw"]
+[gd_scene load_steps=12 format=3 uid="uid://c4qwf5vn3jdyw"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_fgo1o"]
 [ext_resource type="PackedScene" uid="uid://brb58e3yijke7" path="res://cleaner.tscn" id="1_hgogt"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dr2427i2q5q6" path="res://hud.tscn" id="8_2wy5i"]
 [ext_resource type="AudioStream" uid="uid://1k8rwvcnsxyi" path="res://assets/bubble_stage_theme_v1_loop_demo.mp3" id="9_np5wb"]
 [ext_resource type="AudioStream" uid="uid://cmil8ufjpnr01" path="res://assets/shoot1.wav" id="10_mxf6u"]
+[ext_resource type="PackedScene" uid="uid://bmud5214eb2cy" path="res://game_start.tscn" id="11_xid8l"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_fgo1o")
@@ -59,5 +60,7 @@ parameters/looping = true
 [node name="SFXPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_mxf6u")
 bus = &"SFX"
+
+[node name="GameStart" parent="." instance=ExtResource("11_xid8l")]
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

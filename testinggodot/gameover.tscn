@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0v7ptiarmy3l"]
+[gd_scene load_steps=2 format=3 uid="uid://ibnye4o1xk7l"]
 
 [ext_resource type="Script" path="res://gameover.gd" id="1_uqpiw"]
 
@@ -22,9 +22,9 @@ text = "Game Over"
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 924.0
+offset_left = 935.0
 offset_top = 532.0
-offset_right = -946.0
+offset_right = -935.0
 offset_bottom = -517.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -37,7 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 935.0
 offset_top = 661.0
-offset_right = -943.0
+offset_right = -935.0
 offset_bottom = -388.0
 grow_horizontal = 2
 grow_vertical = 2
