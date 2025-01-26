@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://dr2427i2q5q6"]
+[gd_scene load_steps=2 format=3 uid="uid://dr2427i2q5q6"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_jhcf0"]
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_jhcf0")
 
 [node name="HFlowContainer" type="HFlowContainer" parent="."]
 offset_left = 32.0

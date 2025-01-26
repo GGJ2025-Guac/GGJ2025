@@ -8,6 +8,8 @@ class_name Cleaner
 
 signal cleaner_shot_bubble(bubble_inst, position, direction)
 
+signal cleaner_health_change(health)
+
 var speed: float = 500.0
 
 var health: float = 100.0
@@ -60,5 +62,6 @@ func create_bubble():
 		print("Bubble scene not assigned")
 		
 func take_damage(amount: float):
-	health -= amount
+	health = max(health - amount, 0.0)
+	emit_signal("cleaner_health_change", health)
 	print("Cleaner take_damage health: ", health)
