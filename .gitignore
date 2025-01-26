@@ -16,3 +16,8 @@ mono_crash.*.json
 
 # Local media
 *.pdn
+
+# Local binaries
+*.zip
+*.exe
+*.pck
