@@ -30,6 +30,8 @@ func _process(delta: float) -> void:
 	pass
 
 func clean_change(amount: float):
+	print("Main clean_change prior: ", clean_current)
+	print("Main clean_change amount: ", amount)
 	clean_current = minf(clean_current + amount, clean_total)
 	print("Main clean_change current: ", clean_current)
 	var clean_pct = clean_current / clean_total * 100

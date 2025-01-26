@@ -8,6 +8,7 @@ class_name Dirt
 
 var strength: float = 0.1
 var clean_amount: float = 25.0
+var bubble_processed: bool = false
 
 func _physics_process(delta : float):
 	var player_position = player.global_position
@@ -32,6 +33,8 @@ func _process(delta: float) -> void:
 	pass
 
 func bubble_process():
-	if get_parent().has_method("clean_change"):
+	print("Dirt bubble_process")
+	if not bubble_processed and get_parent().has_method("clean_change"):
 		get_parent().clean_change(clean_amount)
+		bubble_processed = true
 	queue_free()
