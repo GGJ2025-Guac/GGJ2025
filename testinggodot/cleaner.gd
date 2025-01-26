@@ -48,11 +48,15 @@ func _process(delta: float):
 		direction.x += 1
 		
 	direction = direction.normalized()
-	look_at(get_global_mouse_position())
 	
 	if direction != Vector2.ZERO:
 		velocity = direction * speed
 		move_and_slide()
+		look_at(global_position + direction)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_released("bubble"):
+		shoot()
 	
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("bubble") && can_shoot:
