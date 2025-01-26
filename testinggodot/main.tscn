@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4qwf5vn3jdyw"]
+[gd_scene load_steps=10 format=3 uid="uid://c4qwf5vn3jdyw"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_fgo1o"]
 [ext_resource type="PackedScene" uid="uid://brb58e3yijke7" path="res://cleaner.tscn" id="1_hgogt"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d0g6vmgcf75og" path="res://assets/couch_texture.png" id="5_vxnnj"]
 [ext_resource type="Script" path="res://dust_manager.gd" id="7_5wrho"]
 [ext_resource type="PackedScene" uid="uid://dr2427i2q5q6" path="res://hud.tscn" id="8_2wy5i"]
+[ext_resource type="AudioStream" uid="uid://1k8rwvcnsxyi" path="res://assets/bubble_stage_theme_v1_loop_demo.mp3" id="9_np5wb"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_fgo1o")
@@ -49,3 +50,9 @@ script = ExtResource("3_um4ml")
 script = ExtResource("7_5wrho")
 
 [node name="HUD" parent="." instance=ExtResource("8_2wy5i")]
+
+[node name="MainBGPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_np5wb")
+parameters/looping = true
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

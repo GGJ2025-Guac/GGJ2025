@@ -5,6 +5,8 @@ extends Node2D
 
 @onready var hud: HUD = $HUD
 
+@onready var audio_player: AudioStreamPlayer2D = $MainBGPlayer
+
 # based on number of dirt (25) + dust bunnies (50)
 # hard-coded for now
 var clean_total: float = 150.0
@@ -14,11 +16,14 @@ var clean_current: float = 0.0
 func _ready():
 	cleaner.connect("cleaner_shot_bubble", Callable(bubble_manager, "handle_bubble_spawned"))
 	cleaner.connect("cleaner_health_change", Callable(hud, "handle_health_change"))
+	
+	if audio_player and not audio_player.playing:
+		audio_player.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
+
 func clean_change(amount: float):
 	clean_current = minf(clean_current + amount, clean_total)
 	print("Main clean_change current: ", clean_current)
@@ -30,3 +35,8 @@ func clean_change(amount: float):
 
 func level_won():
 	print("Main level_won")
+
+
+func _on_tree_exiting() -> void:
+	if audio_player and audio_player.playing:
+		audio_player.stop()
