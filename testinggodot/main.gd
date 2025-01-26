@@ -7,6 +7,8 @@ extends Node2D
 
 @onready var audio_player: AudioStreamPlayer2D = $MainBGPlayer
 
+@onready var sfx_player: AudioStreamPlayer2D = $SFXPlayer
+
 # based on number of dirt (25) + dust bunnies (50)
 # hard-coded for now
 var clean_total: float = 150.0
@@ -40,3 +42,11 @@ func level_won():
 func _on_tree_exiting() -> void:
 	if audio_player and audio_player.playing:
 		audio_player.stop()
+		
+func play_sfx():
+	print("Main play_sfx")
+	sfx_player.play()
+	
+func handle_play_pop():
+	print("Main handle_play_pop")
+	sfx_player.play()

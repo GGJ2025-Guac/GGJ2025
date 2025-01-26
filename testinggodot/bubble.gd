@@ -2,6 +2,8 @@ extends Area2D
 
 class_name Bubble
 
+signal play_pop()
+
 var velocity: Vector2 = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
@@ -20,7 +22,7 @@ func set_velocity(new_velocity: Vector2):
 	velocity = new_velocity
 
 func _on_pop_timer_timeout() -> void:
-	queue_free()
+	pop_bubble()
 
 func _on_body_entered(body: Node2D) -> void:
 	node_entered(body)
@@ -31,4 +33,8 @@ func _on_area_entered(area: Area2D) -> void:
 func node_entered(node):
 	if node.has_method("bubble_process"):
 		node.bubble_process()
-		queue_free()	
+		pop_bubble()
+
+func pop_bubble():
+	emit_signal("play_pop")
+	queue_free()
