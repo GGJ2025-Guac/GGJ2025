@@ -4,8 +4,6 @@ class_name Bubble
 
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 
-signal play_pop()
-
 var velocity: Vector2 = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
@@ -37,5 +35,5 @@ func node_entered(node):
 		pop_bubble()
 
 func pop_bubble():
-	emit_signal("play_pop")
+	get_parent().play_pop_sound()
 	queue_free()
