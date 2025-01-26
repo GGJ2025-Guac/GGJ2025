@@ -42,7 +42,7 @@ func clean_change(amount: float):
 
 func level_won():
 	print("Main level_won")
-	get_tree().change_scene_to_file("res://game_start.tscn")
+	get_tree().change_scene_to_file("res://game_won.tscn")
 
 func _on_tree_exiting() -> void:
 	if audio_player and audio_player.playing:

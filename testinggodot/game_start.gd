@@ -3,6 +3,8 @@ extends CanvasLayer
 @onready var start_button: Button = $Start
 @onready var end_button: Button = $Quit
 
+@onready var title_label = $Label
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -25,4 +27,5 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_back"):
 		end_button.emit_signal("pressed")
 		
-		
+func set_title_text(new_text: String) -> void:
+	title_label.text = new_text
