@@ -8,6 +8,8 @@ class_name Cleaner
 
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var sfx_player: AudioStreamPlayer = $GunPlayer
+
 signal cleaner_shot_bubble(bubble_inst, position, direction)
 
 signal cleaner_health_change(health)
@@ -17,6 +19,13 @@ var speed: float = 500.0
 var health: float = 100.0
 
 var is_dead: bool = false
+
+var gun_sfx_index: int = 0
+
+var sound_effects = {
+	1: preload("res://assets/shoot1.wav"),
+	2: preload("res://assets/shoot2.wav")
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -61,6 +70,7 @@ func _input(event: InputEvent) -> void:
 
 func shoot():
 	create_bubble()
+	play_shoot_sound()
 
 func create_bubble():
 	if Bubble:
@@ -73,6 +83,12 @@ func create_bubble():
 		emit_signal("cleaner_shot_bubble", bubble_inst, gun_tip.global_position, direction)
 	else:
 		print("Bubble scene not assigned")
+		
+func play_shoot_sound():
+	sfx_player.stream = sound_effects.get(gun_sfx_index, null)
+	gun_sfx_index = (gun_sfx_index + 1) % 3
+	if sfx_player.stream:
+		sfx_player.play()
 		
 func take_damage(amount: float):
 	health = max(health - amount, 0.0)

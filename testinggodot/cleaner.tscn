@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://brb58e3yijke7"]
+[gd_scene load_steps=6 format=3 uid="uid://brb58e3yijke7"]
 
 [ext_resource type="Script" path="res://cleaner.gd" id="1_3cy4k"]
 [ext_resource type="PackedScene" uid="uid://pochpevx00k4" path="res://bubble.tscn" id="2_8fhri"]
 [ext_resource type="SpriteFrames" uid="uid://v4wuwniu7jpu" path="res://cleaner_sprite_frames.tres" id="3_mf3uy"]
+[ext_resource type="AudioStream" uid="uid://cmil8ufjpnr01" path="res://assets/shoot1.wav" id="4_glbvn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hmshi"]
 radius = 63.1981
@@ -21,3 +22,7 @@ position = Vector2(112, 40)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("3_mf3uy")
 frame_progress = 0.641696
+
+[node name="GunPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_glbvn")
+bus = &"SFX"
