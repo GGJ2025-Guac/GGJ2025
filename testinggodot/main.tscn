@@ -27,11 +27,11 @@ position = Vector2(432, 360)
 [node name="Camera2D" type="Camera2D" parent="Cleaner"]
 zoom = Vector2(0.465, 0.465)
 
-[node name="Dirt" parent="." instance=ExtResource("3_pk4hb")]
-position = Vector2(-616, -264)
-
 [node name="DustBunny" parent="." instance=ExtResource("5_gu1uk")]
 position = Vector2(368, -584)
+
+[node name="Dirt" parent="." instance=ExtResource("3_pk4hb")]
+position = Vector2(-616, -264)
 
 [node name="Dirt2" parent="." instance=ExtResource("3_pk4hb")]
 position = Vector2(1152, -272)

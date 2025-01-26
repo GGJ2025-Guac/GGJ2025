@@ -7,6 +7,7 @@ class_name Dirt
 @export var speed : float = 100
 
 var strength: float = 0.1
+var clean_amount: float = 25.0
 
 func _physics_process(delta : float):
 	var player_position = player.global_position
@@ -31,4 +32,6 @@ func _process(delta: float) -> void:
 	pass
 
 func bubble_process():
+	if get_parent().has_method("clean_change"):
+		get_parent().clean_change(clean_amount)
 	queue_free()
