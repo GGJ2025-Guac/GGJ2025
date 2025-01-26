@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d0g6vmgcf75og" path="res://assets/couch_texture.png" id="2_yd5rn"]
 [ext_resource type="Texture2D" uid="uid://bcra0ev7pqipu" path="res://assets/dirt.png" id="3_yyrek"]
 [ext_resource type="Texture2D" uid="uid://cxeuap3wryg5x" path="res://assets/bubble.png" id="4_d6dif"]
-[ext_resource type="AudioStream" uid="uid://dvqtt2pfkwioc" path="res://assets/bubble_menu_theme_draft.mp3" id="5_bk3fe"]
+[ext_resource type="AudioStream" uid="uid://bd1i1o34kudhe" path="res://assets/bubble_win.mp3" id="5_6gscf"]
 
 [node name="GameWon" type="CanvasLayer"]
 script = ExtResource("1_o10jk")
@@ -96,9 +96,9 @@ scale = Vector2(3, 3)
 text = "Quit (B)"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_bk3fe")
+stream = ExtResource("5_6gscf")
 autoplay = true
-parameters/looping = true
+parameters/looping = false
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
