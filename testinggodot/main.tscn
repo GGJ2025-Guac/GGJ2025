@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4qwf5vn3jdyw"]
+[gd_scene load_steps=10 format=3 uid="uid://c4qwf5vn3jdyw"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_fgo1o"]
 [ext_resource type="PackedScene" uid="uid://brb58e3yijke7" path="res://cleaner.tscn" id="1_hgogt"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://bubble_manager.gd" id="3_um4ml"]
 [ext_resource type="PackedScene" uid="uid://blonqhojr2oii" path="res://dust_bunny.tscn" id="5_gu1uk"]
 [ext_resource type="Texture2D" uid="uid://d0g6vmgcf75og" path="res://assets/couch_texture.png" id="5_vxnnj"]
-[ext_resource type="Script" path="res://dust_manager.gd" id="7_5wrho"]
 [ext_resource type="AudioStream" uid="uid://df0iosbvlim8v" path="res://assets/pop1.wav" id="7_xkadk"]
 [ext_resource type="PackedScene" uid="uid://dr2427i2q5q6" path="res://hud.tscn" id="8_2wy5i"]
 [ext_resource type="AudioStream" uid="uid://1k8rwvcnsxyi" path="res://assets/bubble_stage_theme_v1_loop_demo.mp3" id="9_np5wb"]
@@ -61,9 +60,6 @@ script = ExtResource("3_um4ml")
 
 [node name="BubblePopPlayer" type="AudioStreamPlayer" parent="BubbleManager"]
 stream = ExtResource("7_xkadk")
-
-[node name="DustManager" type="Node2D" parent="."]
-script = ExtResource("7_5wrho")
 
 [node name="HUD" parent="." instance=ExtResource("8_2wy5i")]
 

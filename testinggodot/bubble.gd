@@ -10,10 +10,6 @@ var velocity: Vector2 = Vector2.ZERO
 func _ready() -> void:
 	animation.play()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _physics_process(delta: float):
 	position += velocity * delta
 

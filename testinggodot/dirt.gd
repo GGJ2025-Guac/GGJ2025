@@ -29,10 +29,6 @@ func _physics_process(delta : float):
 func _ready() -> void:
 	animation.play()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func bubble_process():
 	print("Dirt bubble_process")
 	if not bubble_processed and get_parent().has_method("clean_change"):

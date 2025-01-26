@@ -20,10 +20,6 @@ func _ready():
 	if audio_player and not audio_player.playing:
 		audio_player.play()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func clean_change(amount: float):
 	print("Main clean_change prior: ", clean_current)
 	print("Main clean_change amount: ", amount)
