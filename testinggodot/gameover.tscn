@@ -1,9 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://ibnye4o1xk7l"]
+[gd_scene load_steps=3 format=3 uid="uid://ibnye4o1xk7l"]
 
 [ext_resource type="Script" path="res://gameover.gd" id="1_uqpiw"]
+[ext_resource type="Texture2D" uid="uid://d0g6vmgcf75og" path="res://assets/couch_texture.png" id="2_78ea0"]
 
 [node name="gameover" type="CanvasLayer"]
 script = ExtResource("1_uqpiw")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_repeat = 2
+offset_left = -2048.0
+offset_top = -2048.0
+offset_right = 3072.0
+offset_bottom = 2048.0
+texture = ExtResource("2_78ea0")
+stretch_mode = 1
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 15
