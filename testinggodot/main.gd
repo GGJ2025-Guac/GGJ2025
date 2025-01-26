@@ -7,6 +7,8 @@ extends Node2D
 
 @onready var audio_player: AudioStreamPlayer2D = $MainBGPlayer
 
+@onready var sfx_player: AudioStreamPlayer2D = $SFXPlayer
+
 # based on number of dirt (25) + dust bunnies (50)
 # hard-coded for now
 var clean_total: float = 150.0
@@ -17,6 +19,9 @@ func _ready():
 	cleaner.connect("cleaner_shot_bubble", Callable(bubble_manager, "handle_bubble_spawned"))
 	cleaner.connect("cleaner_health_change", Callable(hud, "handle_health_change"))
 	
+	clean_total = 150.0
+	clean_current = 0.0
+	
 	if audio_player and not audio_player.playing:
 		audio_player.play()
 
@@ -25,6 +30,8 @@ func _process(delta: float) -> void:
 	pass
 
 func clean_change(amount: float):
+	print("Main clean_change prior: ", clean_current)
+	print("Main clean_change amount: ", amount)
 	clean_current = minf(clean_current + amount, clean_total)
 	print("Main clean_change current: ", clean_current)
 	var clean_pct = clean_current / clean_total * 100
@@ -35,8 +42,16 @@ func clean_change(amount: float):
 
 func level_won():
 	print("Main level_won")
-
+	get_tree().change_scene_to_file("res://game_start.tscn")
 
 func _on_tree_exiting() -> void:
 	if audio_player and audio_player.playing:
 		audio_player.stop()
+		
+func play_sfx():
+	print("Main play_sfx")
+	sfx_player.play()
+	
+func handle_play_pop():
+	print("Main handle_play_pop")
+	sfx_player.play()

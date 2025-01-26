@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://dust_manager.gd" id="7_5wrho"]
 [ext_resource type="PackedScene" uid="uid://dr2427i2q5q6" path="res://hud.tscn" id="8_2wy5i"]
 [ext_resource type="AudioStream" uid="uid://1k8rwvcnsxyi" path="res://assets/bubble_stage_theme_v1_loop_demo.mp3" id="9_np5wb"]
-[ext_resource type="PackedScene" uid="uid://cn5685eixth3" path="res://rapidfire.tscn" id="10_fmv6t"]
+[ext_resource type="AudioStream" uid="uid://cmil8ufjpnr01" path="res://assets/shoot1.wav" id="10_mxf6u"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_fgo1o")
@@ -54,11 +54,10 @@ script = ExtResource("7_5wrho")
 
 [node name="MainBGPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_np5wb")
-max_distance = 10000.0
 parameters/looping = true
 
-[node name="rapidfire" parent="." instance=ExtResource("10_fmv6t")]
-position = Vector2(2119, -1183)
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_mxf6u")
+bus = &"SFX"
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
-[connection signal="area_entered" from="rapidfire" to="." method="_on_rapidfire_area_entered"]

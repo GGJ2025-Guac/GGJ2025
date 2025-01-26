@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://cleaner.gd" id="1_3cy4k"]
 [ext_resource type="PackedScene" uid="uid://pochpevx00k4" path="res://bubble.tscn" id="2_8fhri"]
-[ext_resource type="Texture2D" uid="uid://bhjxdvastbul8" path="res://assets/cleaner.png" id="2_qd7wt"]
+[ext_resource type="SpriteFrames" uid="uid://v4wuwniu7jpu" path="res://cleaner_sprite_frames.tres" id="3_mf3uy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hmshi"]
 radius = 63.1981
@@ -11,14 +11,13 @@ radius = 63.1981
 script = ExtResource("1_3cy4k")
 Bubble = ExtResource("2_8fhri")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_qd7wt")
-region_enabled = true
-region_rect = Rect2(0, 0, 240, 240)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-16, 0)
 shape = SubResource("CircleShape2D_hmshi")
 
 [node name="GunTip" type="Marker2D" parent="."]
-position = Vector2(128, 16)
+position = Vector2(112, 40)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("3_mf3uy")
+frame_progress = 0.641696

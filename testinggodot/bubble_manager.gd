@@ -15,5 +15,5 @@ func handle_bubble_spawned(bubble_inst: Bubble, position: Vector2, direction: Ve
 	add_child(bubble_inst)
 	
 	bubble_inst.global_position = position
-	bubble_inst.set_velocity(direction * 200)
+	bubble_inst.set_velocity(direction * 400)
 	

@@ -1,13 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://ibnye4o1xk7l"]
+[gd_scene load_steps=6 format=3 uid="uid://bmud5214eb2cy"]
 
-[ext_resource type="Script" path="res://gameover.gd" id="1_uqpiw"]
-[ext_resource type="Texture2D" uid="uid://d0g6vmgcf75og" path="res://assets/couch_texture.png" id="2_78ea0"]
-[ext_resource type="Texture2D" uid="uid://bcra0ev7pqipu" path="res://assets/dirt.png" id="3_0wrkj"]
-[ext_resource type="Texture2D" uid="uid://cxeuap3wryg5x" path="res://assets/bubble.png" id="4_8h6bt"]
-[ext_resource type="AudioStream" uid="uid://dvqtt2pfkwioc" path="res://assets/bubble_menu_theme_draft.mp3" id="5_8r5dh"]
+[ext_resource type="Script" path="res://game_start.gd" id="1_kwwpu"]
+[ext_resource type="AudioStream" uid="uid://dvqtt2pfkwioc" path="res://assets/bubble_menu_theme_draft.mp3" id="2_477qk"]
+[ext_resource type="Texture2D" uid="uid://d0g6vmgcf75og" path="res://assets/couch_texture.png" id="3_xkx6m"]
+[ext_resource type="Texture2D" uid="uid://bcra0ev7pqipu" path="res://assets/dirt.png" id="3_y2fu4"]
+[ext_resource type="Texture2D" uid="uid://cxeuap3wryg5x" path="res://assets/bubble.png" id="4_ejujn"]
 
-[node name="gameover" type="CanvasLayer"]
-script = ExtResource("1_uqpiw")
+[node name="GameStart" type="CanvasLayer"]
+script = ExtResource("1_kwwpu")
 
 [node name="Background" type="TextureRect" parent="."]
 texture_repeat = 2
@@ -15,7 +15,7 @@ offset_left = -2048.0
 offset_top = -2048.0
 offset_right = 3072.0
 offset_bottom = 2048.0
-texture = ExtResource("2_78ea0")
+texture = ExtResource("3_xkx6m")
 stretch_mode = 1
 
 [node name="DirtRect" type="TextureRect" parent="."]
@@ -28,7 +28,7 @@ offset_right = -1580.0
 offset_bottom = -740.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_0wrkj")
+texture = ExtResource("3_y2fu4")
 
 [node name="BubbleRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -41,7 +41,7 @@ offset_bottom = -108.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
-texture = ExtResource("4_8h6bt")
+texture = ExtResource("4_ejujn")
 
 [node name="BubbleRect2" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -54,22 +54,22 @@ offset_bottom = -216.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
-texture = ExtResource("4_8h6bt")
+texture = ExtResource("4_ejujn")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 835.0
+offset_left = 826.0
 offset_top = 383.0
-offset_right = -998.0
+offset_right = -989.0
 offset_bottom = -674.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(4, 4)
-text = "Game Over"
+text = "Bubblinators!"
 
-[node name="Retry" type="Button" parent="."]
+[node name="Start" type="Button" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -80,7 +80,7 @@ offset_bottom = -517.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
-text = "Retry (A)"
+text = "Start (A)"
 
 [node name="Quit" type="Button" parent="."]
 anchors_preset = 15
@@ -96,9 +96,9 @@ scale = Vector2(3, 3)
 text = "Quit (B)"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_8r5dh")
+stream = ExtResource("2_477qk")
 autoplay = true
 parameters/looping = true
 
-[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
