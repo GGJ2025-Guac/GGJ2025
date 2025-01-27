@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="TestingGodot"
+config/name="Bubblinators"
 run/main_scene="res://game_start.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
@@ -22,7 +22,7 @@ window/size/viewport_height=1080
 
 [dotnet]
 
-project/assembly_name="TestingGodot"
+project/assembly_name="Bubblinators"
 
 [input]
 
